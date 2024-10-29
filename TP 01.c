@@ -1,5 +1,9 @@
+                /*     TP 01     */
 #include<stdio.h>
 int main(){
+  
+                /*  Exercice 01  */
+  
 int i,j,y[4][4];
 char m[5][5] = {{'1','2','3','4','5'},
                 {'7','a','c','8','d'},
@@ -7,7 +11,7 @@ char m[5][5] = {{'1','2','3','4','5'},
                 {'5','6','p','n','3'},
                 {'2','9','t','m','k'}};
 //afficher la matrise.
-printf("َُExercice 01:\n1.1 afficher la matrise.\n");
+printf("Exercice 01:\n1.1 Afficher la matrise.\n");
 for(int i = 0 ; i < 5 ; i++ ){
     for(int j = 0; j < 5 ; j++){
         printf("%c\t",m[i][j]);
@@ -50,8 +54,9 @@ for(i = 4 ; i >= 0 ; i--){
 }
 
 printf("\n\n");
+  
+                /*  Exercice 02  */
 
-//
 printf("Exercice 02:\nMatrise before:\n");
  int T[5][5],h;
     for(i = 0 ; i < 4 ; i++){
