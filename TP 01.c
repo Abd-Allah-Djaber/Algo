@@ -1,94 +1,81 @@
-                /*     TP 01     */
-#include<stdio.h>
-int main(){
-  
-                /*  Exercice 01  */
-  
-int i,j,y[4][4];
-char m[5][5] = {{'1','2','3','4','5'},
-                {'7','a','c','8','d'},
-                {'c','9','4','z','8'},
-                {'5','6','p','n','3'},
-                {'2','9','t','m','k'}};
-//afficher la matrise.
-printf("Exercice 01:\n1.1 Afficher la matrise.\n");
-for(int i = 0 ; i < 5 ; i++ ){
-    for(int j = 0; j < 5 ; j++){
-        printf("%c\t",m[i][j]);
+#include <stdio.h>
+
+int main() {
+printf("Exercice 01:\n");
+    // تعريف المصفوفة
+    char matrice[5][5] = {
+        {'1', '2', '3', '4', '5'},
+        {'7', 'a', 'c', '8', 'd'},
+        {'c', '9', '4', 'z', '8'},
+        {'5', '6', 'p', 'm', '-'},
+        {'2', '9', 't', 'm', 'k'}
+    };
+
+    // عرض المصفوفة الكاملة
+    printf("المصفوفة الكاملة:\n");
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%c ", matrice[i][j]);
+        }
+        printf("\n");
     }
-    printf("\n\n");
+// عرض السطور ذات المؤشرات الزوجية
+printf("\nالسطور ذات المؤشرات الزوجية:\n");
+for (int i = 0; i < 5; i++) {
+    if (i % 2 == 0) { // تحقق إذا كان المؤشر زوجيًا
+        for (int j = 0; j < 5; j++) {
+            printf("%c ", matrice[i][j]);
+        }
+        printf("\n");
+    }
+}// عرض العناصر ذات المؤشرات الفردية في كل سطر
+printf("\nالعناصر ذات المؤشرات الفردية:\n");
+for (int i = 0; i < 5; i++) {
+    for (int j = 0; j < 5; j++) {
+        if (j % 2 != 0) { // تحقق إذا كان المؤشر فرديًا
+            printf("%c ", matrice[i][j]);
+        }
+    }
+    printf("\n");
+}// عرض القطر الرئيسي
+printf("\nالقطر الرئيسي:\n");
+for (int i = 0; i < 5; i++) {
+    printf("%c ", matrice[i][i]);
 }
-//afficher la matrise constituée uniquemnent des ligne d'indice pair.
-printf("afficher la matrise constituée uniquemnent des ligne d'indice pair.\n");
+printf("\n");
 
-for(int i = 0 ; i < 5 ; i++ ){
-    for(int j = 0; j < 5 ; j++){
-        if(i%2 == 0)
-            printf("%d,%d\t",i,j);
-        else
-            printf(" ");
-    }
-    printf("\n\n");
+// عرض القطر الثانوي
+printf("\nالقطر الثانوي:\n");
+for (int i = 0; i < 5; i++) {
+    printf("%c ", matrice[i][4 - i]);
 }
-//afficher la matrise constituée uniquemnent des éléments d'indice impair de chaque ligne.
-printf("afficher la matrise constituée uniquemnent des éléments d'indice impair de chaque ligne.\n");
+printf("\nExercice02:\n");
+    // تعريف المصفوفة
+    int matric[4][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
 
-for(int i = 0 ; i < 5 ; i++ ){
-    for(int j = 0; j < 5 ; j++){
-        if(i%2 == 0)
-            printf("%c\t",m[i][j]);
-        else
-            printf(" ");
-    }
-    printf("\n\n");
-}
-//
-printf("\n\n1.2. la diagonale:\n");
-for(i = 0 ; i < 5 ; i++){
-    printf("\t%c",m[i][i]);
-}
+    int n = 4;
 
-printf("\n\nla 2e diagonale:\n");
-for(i = 4 ; i >= 0 ; i--){
-    printf("\t%c",m[i][4-i]);
-}
-
-printf("\n\n");
-  
-                /*  Exercice 02  */
-
-printf("Exercice 02:\nMatrise before:\n");
- int T[5][5],h;
-    for(i = 0 ; i < 4 ; i++){
-        for(j = 0 ; j < 4 ; j++){
-            T[i][j] = 4*i + j + 1 ;
-    }
+    // تبديل المثلث العلوي بالسفلي
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) { // فقط العناصر العلوية
+            int temp = matric[i][j];
+            matric[i][j] = matric[j][i];
+            matric[j][i] = temp;
+        }
     }
 
-    for(int i = 0 ; i < 4 ; i++){
-            printf("\n\n");
-        for(int j = 0 ; j < 4 ; j++){
-            printf("\t%d",T[i][j]);
+    // عرض المصفوفة بعد التبديل
+    printf("المصفوفة بعد تبديل المثلث العلوي بالسفلي:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", matric[i][j]);
+        }
+        printf("\n");
     }
-    }
-
-    for(int i = 0 ; i < 4 ; i++){
-        for(int j = 0 ; j < i ; j++){
-            h = T[i][j];
-            T[i][j] = T[j][i];
-            T[j][i] = h;
-    }
-    }
-
-
-    printf("\nafter\n");
-    for(int i = 0 ; i < 4 ; i++){
-            printf("\n\n");
-        for(int j = 0 ; j < 4 ; j++){
-            printf("\t%d",T[i][j]);
-    }
-    }
-
-
-return 0;
+    return 0;
 }
