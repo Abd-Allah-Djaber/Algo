@@ -11,6 +11,8 @@ char *ChargerChaine(int N) {
     }
     printf("Entrez une chaîne de %d caractères : ", N);
     scanf("%s", chaine); // Lecture de la chaîne
+    *(chaine + N) = '\0';
+ 
     return chaine;
 }
 
