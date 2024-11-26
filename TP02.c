@@ -27,7 +27,13 @@ int Longueur(char *ch) {
 
 // Procédure pour charger une chaîne dans un tableau
 void ChargerTab(char *p, char Tab[]) {
-    strcpy(Tab, p); // Copier la chaîne dans le tableau
+    // Copier la chaîne dans le tableau
+    int i;
+    for(i = 0; p[i] != '\0';i++)
+    {
+        Tab[i] = p[i];
+    }
+    Tab[i] = '\0';
 }
 
 // Procédure pour inverser un tableau
