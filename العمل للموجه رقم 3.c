@@ -32,7 +32,7 @@ element* chargerListe(int Tab[], int n, element* liste) {
 void afficherListe(element* liste) {
     element* courant = liste;
     while (courant != NULL) {
-        printf("%2d -> ", courant->val);
+        printf("%d -> ", courant->val);
         courant = courant->suivant;
     }
     printf("NULL\n");
